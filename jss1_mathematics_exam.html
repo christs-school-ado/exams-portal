@@ -328,7 +328,7 @@
             <button id="theoryBtn" class="section-btn" onclick="showSection('theory')">THEORY QUESTIONS</button>
         </div>
         <div class="exam-info">
-            Exam: <span style="color: #ffb347;">MATHEMATICS JSS1 - SECOND TERM</span>
+            Exam: <span style="color: #ffb347;">MATHEMATICS JSS1 - THIRD TERM</span>
         </div>
         <div id="timer">45:00</div>
     </div>
@@ -448,7 +448,7 @@
     let userAnswers = new Array(questions.length).fill(null);
     let currentQuestion = 0;
     let timerInterval = null;
-    let timeSeconds = 61 * 60; // 61 minutes
+    let timeTHIRDs = 61 * 60; // 61 minutes
     let currentSection = 'objectives';  // FIXED: global section tracker
 
     function saveAnswer() {
@@ -563,21 +563,21 @@
     function startTimer() {
         if (timerInterval) clearInterval(timerInterval);
         timerInterval = setInterval(() => {
-            if (timeSeconds <= 0) {
+            if (timeTHIRDs <= 0) {
                 clearInterval(timerInterval);
                 document.getElementById('timer').innerText = "00:00";
                 alert("Time is up! Submitting exam.");
                 submitExam();
                 return;
             }
-            timeSeconds--;
-            const mins = Math.floor(timeSeconds / 60);
-            const secs = timeSeconds % 60;
+            timeTHIRDs--;
+            const mins = Math.floor(timeTHIRDs / 60);
+            const secs = timeTHIRDs % 60;
             const timerElem = document.getElementById('timer');
             timerElem.innerText = `REMAINING TIME LEFT: ${mins.toString().padStart(2,'0')}:${secs.toString().padStart(2,'0')}`;
-            if (timeSeconds <= 300) {
+            if (timeTHIRDs <= 300) {
                 timerElem.classList.add('warning');
-                if (timeSeconds === 300) alert("⚠️ 5 minutes remaining!");
+                if (timeTHIRDs === 300) alert("⚠️ 5 minutes remaining!");
             } else {
                 timerElem.classList.remove('warning');
             }

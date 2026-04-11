@@ -16,7 +16,7 @@
         }
         body {
             font-family: 'Inter', sans-serif;
-            background: url('img/school-bg.png') no-repeat center center fixed;
+            background: url('img/lab2.png') no-repeat center center fixed;
             background-size: cover;
             min-height: 100vh;
             display: flex;
@@ -24,6 +24,7 @@
             align-items: center;
             padding: 20px;
             position: relative;
+            opacity: 0.7;
         }
         body::before {
             content: "";
@@ -135,12 +136,12 @@
     <div class="logo">
         <img src="img/school-logo.png" alt="Christ's School Logo">
     </div>
-    <h2>Welcome Back</h2>
-    <div class="sub">Enter your credentials to continue</div>
+    <h2>CBT  EXAMS PORTAL</h2>
+    <div class="sub">Enter your username and password </div>
 
     <form id="loginForm">
         <div class="input-group">
-            <label><i class="fas fa-user"></i> Username (Registration Number)</label>
+            <label><i class="fas fa-user"></i> Username </label>
             <input type="text" id="username" placeholder="e.g. Michael owen" required>
         </div>
         <div class="input-group">
@@ -158,30 +159,30 @@
     // Array of dummy users with username, password, classPrefix, paid status, and image filename
     const users = [
         // JSS1 students
-        { username: "john smith", password: "cs101", classPrefix: "cs1", paid: true, image: "admin.png" },
+        { username: "akin oke", password: "cs101", classPrefix: "cs1", paid: true, image: "bro_akin1.png" },
         { username: "mary smith", password: "cs102", classPrefix: "cs1", paid: true, image: "student2.jpg" },
         { username: "donald smith", password: "cs103", classPrefix: "cs1", paid: false, image: "student3.jpg" },
         // JSS2
-        { username: "michael smith", password: "cs201", classPrefix: "cs20", paid: true, image: "admin.png" },
-        { username: "george smith", password: "cs202", classPrefix: "cs20", paid: false, image: "jss2_102.jpg" },
+        { username: "michael smith", password: "cs201", classPrefix: "cs2", paid: true, image: "admin.png" },
+        { username: "george smith", password: "cs202", classPrefix: "cs2", paid: false, image: "jss2_102.jpg" },
         // JSS3
-        { username: "sandra smith", password: "cs301", classPrefix: "cs30", paid: true, image: "jss3_201.jpg" },
+        { username: "sandra smith", password: "cs301", classPrefix: "cs3", paid: true, image: "jss3_201.jpg" },
         // SS1
-        { username: "julius smith", password: "cs401", classPrefix: "cs40", paid: true, image: "admin.png" },
+        { username: "julius smith", password: "cs401", classPrefix: "cs4", paid: true, image: "admin.png" },
         // SS2
-        { username: "best smith", password: "cs501", classPrefix: "cs50", paid: false, image: "ss2_401.jpg" },
+        { username: "best smith", password: "cs501", classPrefix: "cs5", paid: false, image: "ss2_401.jpg" },
         // SS3
-        { username: "jordan smith", password: "cs601", classPrefix: "cs60", paid: true, image: "ss3_501.jpg" }
+        { username: "jordan smith", password: "cs601", classPrefix: "cs6", paid: true, image: "ss3_501.jpg" }
     ];
 
     // Mapping class prefix to dashboard page
     const classMap = {
         'cs1': 'jss1_dashboard.html',
-        'cs20': 'jss2_dashboard.html',
-        'cs30': 'jss3_dashboard.html',
-        'cs40': 'ss1_dashboard.html',
-        'cs50': 'ss2_dashboard.html',
-        'cs60': 'ss3_dashboard.html'
+        'cs2': 'jss2_dashboard.html',
+        'cs3': 'jss3_dashboard.html',
+        'cs4': 'ss1_dashboard.html',
+        'cs5': 'ss2_dashboard.html',
+        'cs6': 'ss3_dashboard.html'
     };
 
     document.getElementById('loginForm').addEventListener('submit', function(e) {
